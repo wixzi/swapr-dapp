@@ -34,9 +34,20 @@ export default function ClaimModal({
   stakedAmount?: string | null
   singleSidedCampaignLink?: string
 }) {
+<<<<<<< Updated upstream
   const { push } = useHistory()
   const open = useShowClaimPopup()
 
+=======
+  const { chainId } = useActiveWeb3React()
+  const { push } = useHistory()
+  const open = useShowClaimPopup()
+
+  useEffect(() => {
+    setCorrectNetwork(chainId === ChainId.ARBITRUM_ONE)
+  }, [chainId])
+
+>>>>>>> Stashed changes
   const wrappedOnDismiss = useCallback(() => {
     onDismiss()
   }, [onDismiss])

@@ -33,6 +33,7 @@ import AppBody from '../AppBody'
 import Loader from '../../components/Loader'
 import { useTargetedChainIdFromUrl } from '../../hooks/useTargetedChainIdFromUrl'
 import QuestionHelper from '../../components/QuestionHelper'
+<<<<<<< Updated upstream
 import { Tabs } from '../../components/swap/Tabs'
 import { ReactComponent as SwapIcon } from '../../assets/svg/swap-icon.svg'
 import { useUSDValue } from '../../hooks/useUSDValue'
@@ -40,6 +41,10 @@ import { computeFiatValuePriceImpact } from '../../utils/computeFiatValuePriceIm
 import { SwapSettings } from './../../components/swap/SwapSettings'
 import { SwapButton } from '../../components/swap/SwapButton'
 import { RecipientField } from '../../components/RecipientField'
+=======
+import { ApplicationModal } from '../../state/application/actions'
+// import Circle from '../../assets/images/blue-loader.svg'
+>>>>>>> Stashed changes
 
 // Landing Page Imports
 import './../../theme/landingPageTheme/stylesheet.css'
@@ -464,6 +469,10 @@ export default function Swap() {
             </Wrapper>
           </AppBody>
           <AdvancedSwapDetailsDropdown
+<<<<<<< Updated upstream
+=======
+            isLoading={swapInfoIsLoading}
+>>>>>>> Stashed changes
             trade={trade}
             allPlatformTrades={allPlatformTrades}
             onSelectedPlatformChange={setPlatformOverride}

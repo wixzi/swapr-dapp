@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import React, { useCallback } from 'react'
 import { CurrencyAmount, RoutablePlatform, Trade, TradeType } from '@swapr/sdk'
+=======
+import React, { FC, useCallback } from 'react'
+import { CurrencyAmount, CurveTrade, RoutablePlatform, Trade, TradeType, UniswapV2Trade } from '@swapr/sdk'
+>>>>>>> Stashed changes
 import { AutoColumn } from '../Column'
 import { TYPE } from '../../theme'
 import CurrencyLogo from '../CurrencyLogo'
@@ -29,6 +34,7 @@ export interface SwapPlatformSelectorProps {
   allPlatformTrades: (Trade | undefined)[] | undefined
   selectedTrade?: Trade
   onSelectedPlatformChange: (newPlatform: RoutablePlatform) => void
+  isLoading: boolean
 }
 
 interface GasFeeProps {
@@ -50,7 +56,35 @@ function GasFee({ loading, gasFeeUSD }: GasFeeProps) {
   return <WarningHelper text="Could not estimate gas fee. Please make sure you've approved the traded token." />
 }
 
+interface PlatformSelectorLoaderProps {
+  showGasFees?: boolean
+}
+
+export const PlatformSelectorLoader: FC<PlatformSelectorLoaderProps> = ({ showGasFees }) => (
+  <>
+    {[0, 1, 2].map(i => (
+      <tr key={i}>
+        <td colSpan={4}>
+          <Skeleton width="36px" height="12px" />
+        </td>
+        <td>
+          <Skeleton width="36px" height="12px" />
+        </td>
+        {showGasFees && (
+          <td>
+            <Skeleton width="36px" height="12px" />
+          </td>
+        )}
+        <td align="right">
+          <Skeleton width="36px" height="12px" />
+        </td>
+      </tr>
+    ))}
+  </>
+)
+
 export function SwapPlatformSelector({
+  isLoading,
   allPlatformTrades,
   selectedTrade,
   onSelectedPlatformChange
@@ -92,6 +126,7 @@ export function SwapPlatformSelector({
         </thead>
         <tbody>
           <Spacer />
+<<<<<<< Updated upstream
           {allPlatformTrades?.map((trade, i) => {
             if (!trade) return null // some platforms might not be compatible with the currently selected network
             const isExactIn = trade.tradeType === TradeType.EXACT_INPUT
@@ -130,12 +165,63 @@ export function SwapPlatformSelector({
                       currency={isExactIn ? trade.outputAmount.currency : trade.inputAmount.currency}
                       size="14px"
                       marginLeft={4}
+=======
+          {isLoading && allPlatformTrades?.length === 0 ? (
+            <PlatformSelectorLoader showGasFees={showGasFees} />
+          ) : (
+            allPlatformTrades?.map((trade, i) => {
+              if (!trade) return null // some platforms might not be compatible with the currently selected network
+              const isExactIn = trade.tradeType === TradeType.EXACT_INPUT
+              const gasFeeUSD = gasFeesUSD[i]
+
+              let realizedLPFee
+              if (trade instanceof CurveTrade) {
+                realizedLPFee = trade.fee
+              } else {
+                realizedLPFee = computeTradePriceBreakdown(trade).realizedLPFee
+              }
+
+              const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
+              return (
+                <tr key={i} style={{ lineHeight: '22px' }}>
+                  <td colSpan={4}>
+                    <Radio
+                      checked={selectedTrade?.platform.name === trade.platform.name}
+                      label={trade.platform.name}
+                      icon={ROUTABLE_PLATFORM_LOGO[trade.platform.name]}
+                      value={trade.platform.name.toLowerCase()}
+                      onChange={handleSelectedTradeOverride}
+>>>>>>> Stashed changes
                     />
-                  </RowFixed>
-                </td>
-              </tr>
-            )
-          })}
+                  </td>
+                  <td>
+                    <TYPE.main color="text4" fontSize="10px" lineHeight="12px">
+                      {realizedLPFee ? `${realizedLPFee.toFixed(2)}%` : '-'}
+                    </TYPE.main>
+                  </td>
+                  {showGasFees && (
+                    <td width="44px" align="right">
+                      <GasFee loading={debouncedLoadingGasFees} gasFeeUSD={gasFeeUSD} />
+                    </td>
+                  )}
+                  <td align="right">
+                    <RowFixed>
+                      <TYPE.subHeader color="white" fontSize="12px" fontWeight="600">
+                        {isExactIn
+                          ? `${slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(4)}` ?? '-'
+                          : `${slippageAdjustedAmounts[Field.INPUT]?.toSignificant(4)}` ?? '-'}
+                      </TYPE.subHeader>
+                      <CurrencyLogo
+                        currency={isExactIn ? trade.outputAmount.currency : trade.inputAmount.currency}
+                        size="14px"
+                        marginLeft={4}
+                      />
+                    </RowFixed>
+                  </td>
+                </tr>
+              )
+            })
+          )}
         </tbody>
       </Table>
       {selectedTrade && selectedTrade.route.path.length > 2 && (
