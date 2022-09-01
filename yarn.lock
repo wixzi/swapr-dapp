@@ -4482,10 +4482,10 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@swapr/core@^0.3.17", "@swapr/core@^0.3.18":
-  version "0.3.18"
-  resolved "https://registry.yarnpkg.com/@swapr/core/-/core-0.3.18.tgz#249a6e1c90c53d6c2beae8c712d429cf8a577906"
-  integrity sha512-AsSyXCIx3OhR399lgQD/bmAgAA2Xa2k2XabH/kG1TeuHfmT2ob+8l5ROit7puO/lD9aFsXO4mxO34oVcoaoXgA==
+"@swapr/core@^0.3.17", "@swapr/core@^0.3.18", "@swapr/core@^0.3.20":
+  version "0.3.20"
+  resolved "https://registry.yarnpkg.com/@swapr/core/-/core-0.3.20.tgz#2ba381565b09298a1c298fbf3939788783a2fa83"
+  integrity sha512-wUBRsb+Oahm4HUHBP1Ou/X3wY+6gLKjj0Zz6+G5nqDmtkpQhYSGRQvmtNZXbVKFtQAsNlLo2mGNF1T1haMOWSQ==
   dependencies:
     typescript "^3.9.5"
 
