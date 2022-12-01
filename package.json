@@ -116,7 +116,7 @@
     "@testing-library/cypress": "^8.0.2",
     "@types/aos": "^3.0.4",
     "@types/jest": "^25.2.1",
-    "@types/lodash": "^4.14.182",
+    "@types/lodash": "^4.14.191",
     "@types/luxon": "^2.3.2",
     "@types/multicodec": "^1.0.0",
     "@types/node": "^18.0.1",
