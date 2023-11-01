@@ -28,7 +28,7 @@ jobs:
           fetch-depth: '50'
 
       - name: ⎔・Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
           check-latest: true
@@ -64,7 +64,7 @@ jobs:
         run: tar --extract --use-compress-program='zstd -d' --file=workspace.tar.zst
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
@@ -85,7 +85,7 @@ jobs:
         run: tar --extract --use-compress-program='zstd -d' --file=workspace.tar.zst
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
@@ -106,7 +106,7 @@ jobs:
         run: tar --extract --use-compress-program='zstd -d' --file=workspace.tar.zst
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
@@ -127,7 +127,7 @@ jobs:
         run: tar --extract --use-compress-program='zstd -d' --file=workspace.tar.zst
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
@@ -164,7 +164,7 @@ jobs:
         run: tar --extract --use-compress-program='zstd -d' --file=build.tar.zst
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
       - name: Start Deployment
@@ -213,7 +213,7 @@ jobs:
           fetch-depth: '50'
 
       - name: ⎔ Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
           check-latest: true
@@ -339,7 +339,7 @@ jobs:
           path: mochawesome-report
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '16'
 
