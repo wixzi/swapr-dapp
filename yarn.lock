@@ -21092,10 +21092,10 @@ react-fast-compare@^3.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
 
-react-fast-marquee@^1.3.1:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/react-fast-marquee/-/react-fast-marquee-1.3.2.tgz#b95150c99509cd5c0213b35c8fe776cc1d72580f"
-  integrity sha512-iTRVzu5c5Hig9FsgDgOveJC08PY7nQgbvnr8bBCnVibziA2onWdLJMmjxhgmxEWed7tSRffeXgkx/Gq0M/Q5OQ==
+react-fast-marquee@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/react-fast-marquee/-/react-fast-marquee-1.6.2.tgz#86d4d86af4e9624129d852921dde1dce1a4f1604"
+  integrity sha512-bXUuW1r+Yzd8ZjsPmMDy8WJMubHAZd/7n0W/IzUQHtd0iBfxWohP6hzCFnEHWMCOtC9wxSAq/BiEnig4kdI2Vw==
 
 react-feather@^2.0.8:
   version "2.0.10"
