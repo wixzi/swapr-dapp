@@ -367,7 +367,7 @@ jobs:
           retention-days: 3
 
       - name: Delete merged artifacts
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v4
         with:
           name: |
             LiquidityTests
@@ -386,7 +386,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Delete workspace artifact
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v4
         with:
           name: workspace
 
@@ -397,6 +397,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Delete workspace artifact
-        uses: geekyeggo/delete-artifact@v1
+        uses: geekyeggo/delete-artifact@v4
         with:
           name: workspace
