@@ -18339,7 +18339,12 @@ multicodec@^3.0.1, multicodec@^3.2.1:
     uint8arrays "^3.0.0"
     varint "^6.0.0"
 
-multiformats@^9.4.2, multiformats@^9.6.4, multiformats@^9.7.0:
+multiformats@^13.1.1:
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/multiformats/-/multiformats-13.1.1.tgz#b22ce4df26330d2cf0d69f5bdcbc9a787095a6e5"
+  integrity sha512-JiptvwMmlxlzIlLLwhCi/srf/nk409UL0eUBr0kioRJq15hqqKyg68iftrBvhCRjR6Rw4fkNnSc4ZJXJDuta/Q==
+
+multiformats@^9.4.2, multiformats@^9.6.4:
   version "9.7.0"
   resolved "https://registry.yarnpkg.com/multiformats/-/multiformats-9.7.0.tgz#845799e8df70fbb6b15922500e45cb87cf12f7e5"
   integrity sha512-uv/tcgwk0yN4DStopnBN4GTgvaAlYdy6KnZpuzEPFOYQd71DYFJjs0MN1ERElAflrZaYyGBWXyGxL5GgrxIx0Q==
